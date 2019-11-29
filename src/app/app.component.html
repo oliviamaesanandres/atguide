@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>T-Guide</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script>
+    const htmlTag = document.querySelector('html');
+    const bodyTag = document.querySelector('body');
+    const myNav = document.querySelector('nav');
+    const myElem = document.querySelector('nav li a');
+
+    let scrolled = () => {
+      let dec = scrollY / (bodyTag.scrollHeight - innerHeight);
+      return Math.floor(dec * 100);
+    }
+
+    addEventListener('scroll', () => {
+      myNav.style.setProperty('background', scrolled() > 50 ? "var(black)" : "var(green)");
+    })
+  </script>
+</head>
+
+<body>
+
+  <div class="op" style=" 
+   z-index:6;">
+    <header class="fixHeader">
+      <!-- <img src="assets/title/place.png"> -->
+      T - G U I D E
+
+
+      <a routerLink="/login" *ngIf="currentUser===null" routerLinkActive="linkActive" style="float:right">SIGN IN</a>
+      <a *ngIf="currentUser" class="nav-item nav-link" (click)="logout()" style="float:right">LOG OUT</a>
+
+      <h4 style="float:right; margin-top:3%; margin-right:1%; color: rgb(27, 104, 155);">|</h4>
+      <a routerLink="/account" routerLinkActive="linkActive" style="float:right">
+        <img src="assets/images/facebook.png"></a>
+      <a routerLink="/account" routerLinkActive="linkActive" style="float:right">
+        <img src="assets/images/instagram.png"></a>
+      <a routerLink="/account" routerLinkActive="linkActive" style="float:right">
+        <img src="assets/images/pinterest.png"></a>
+      <a routerLink="/account" routerLinkActive="linkActive" style="float:right">
+        <img src="assets/images/tumblr.png"></a>
+      <a routerLink="/account" routerLinkActive="linkActive" style="float:right">
+        <img src="assets/images/twitter.png"></a>
+      <a routerLink="/account" routerLinkActive="linkActive" style="float:right">
+        <img src="assets/images/youtube.png"></a>
+    </header>
+    <nav class="topnav fix" style="height:7.3%;"  *ngIf="currentUser">
+
+
+
+
+      <!-- <a routerLink="/homeguest" routerLinkActive="linkActive">Home for Guest</a> -->
+      <a routerLink="/homeaccount" routerLinkActive="linkActive">Home</a>
+      <a routerLink="/locationaccount" routerLinkActive="linkActive">Location</a>
+      <a routerLink="/home" routerLinkActive="linkActive">Account</a>
+      <a routerLink="/about" routerLinkActive="linkActive">About Us</a>
+      <!-- <a routerLink="/admin" routerLinkActive="linkActive">Admin</a> -->
+
+      <a routerLink="#" routerLinkActive="linkActive" style="float:right"><img src="../assets/images/search.png"></a>
+
+    </nav>
+
+
+    <nav class="topnav fix" style="height:7.3%;" *ngIf="currentUser===null">
+      <a routerLink="/homeguest" routerLinkActive="linkActive">Home for Guest</a>
+      <!-- <a routerLink="/home" routerLinkActive="linkActive">Home</a> -->
+      <a routerLink="/location" routerLinkActive="linkActive">Location</a>
+      <!-- <a routerLink="/account" routerLinkActive="linkActive">Account</a> -->
+      <a routerLink="/about" routerLinkActive="linkActive">About Us</a>
+      <!-- <a routerLink="/admin" routerLinkActive="linkActive">Admin</a> -->
+      <a routerLink="#" routerLinkActive="linkActive" style="float:right"><img src="../assets/images/search.png"></a>
+
+    </nav>
+<!-- <nav *ngIf="currentUser">  -->
+    <!-- <nav *ngFor="let user of users"> -->
+
+
+      <!-- {{user.username}} ({{user.firstName}} {{user.lastName}}) -->
+      <nav class="topnav fix" style="height:7.3%;" *ngIf="currentUser?.username=='admin'">
+
+        <!-- *ngIf="(currentUser | json) != '{}' -->
+
+        <!-- <a routerLink="/homeguest" routerLinkActive="linkActive">Home for Guest</a> -->
+        <a routerLink="/homeadmin" routerLinkActive="linkActive">Home</a>
+        <a routerLink="/locationadmin" routerLinkActive="linkActive">Location</a>
+        <a routerLink="/home" routerLinkActive="linkActive">Account</a>
+        <a routerLink="/about" routerLinkActive="linkActive">About Us</a>
+        <a routerLink="/admin" routerLinkActive="linkActive">Admin</a>
+        <a routerLink="#" routerLinkActive="linkActive" style="float:right"><img src="../assets/images/search.png"></a>
+      </nav> 
+    <!-- </nav> -->
+<!-- </nav>  -->
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <script>
+    // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("navbar").style.padding = "30px 10px";
+        document.getElementById("logo").style.fontSize = "25px";
+      } else {
+        document.getElementById("navbar").style.padding = "80px 10px";
+        document.getElementById("logo").style.fontSize = "35px";
+      }
+    }
+  </script>
+  <footer>
+    Copyright <sup>@</sup> TGuide 2019 |All Rights Reserved
+  </footer>
+</body>
+
+</html>

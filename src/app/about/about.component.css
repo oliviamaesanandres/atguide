@@ -1,0 +1,167 @@
+
+header img{
+    width:70%;
+    height: 388px;
+    margin-top:12%;
+    margin-left:15%;
+  }
+  * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin:0;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    }
+  
+    .row{
+      margin:2%;
+    }
+  /* Create three unequal columns that floats next to each other */
+  .column {
+      float: left;
+      padding: 10px;
+    }
+    
+    /* Left and right column */
+    .column.side {
+      width: 25%;
+      height: 100%; /* Full height */
+      position: absolute;
+      overflow: hidden;
+      margin-left: 75%;
+    }
+    
+    /* Middle column */
+    .column.main {
+      width: 75%;
+      overflow: hidden;
+      
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column.sice, .column.main {
+        width: 100%;
+      }
+    }
+  
+  
+  .columnn {
+    float: left;
+    width: 23%;
+    padding: 5px;
+  }
+  
+  
+  .columnn a{
+    
+    font-size: 30px;
+    text-decoration: none;
+    color: inherit;
+  }
+  /* Clearfix (clear floats) */
+  .roww:after {
+    content: "";
+    clear: both;
+    display: table;
+    background-color: rgb(243, 225, 205);
+  }
+  
+  
+  
+  
+  .image{
+      display:inline-block;
+  text-align:center;
+      
+  }
+  
+  .image img{
+  
+      padding:20px;
+      width:250px;
+      
+  }
+  .image1{
+      display:inline-block;
+  text-align:center;
+      padding-top:30px;
+  }
+  
+  .image1 img{
+      
+      width:100%;
+      
+  }
+  
+  .cont{
+      background-color:pink;
+      padding:5px;
+      padding-left:10px;
+      clear:both;
+      margin-top:50px;
+      
+      font-family:Britannic Bold;
+      text-align:left;
+  }
+  
+  .image{
+      margin-top:150px;
+  }
+  .gallery{
+    margin:10px 50px;
+    margin-left:0;
+      float:none;
+  }
+  
+  .gallery img{
+      width:500px;
+      padding:5px;
+      filter: grayscale(100%);
+      transition:1s;
+      width:175px;
+      height:200px;
+  }
+  
+  .gallery img:hover{
+      filter:grayscale(0);
+      transform: scale(1.1);
+  }
+  .gallery img a{
+      float: left;
+  }
+  
+  
+  .places img a{
+  float: left;
+  }
+  
+  .places img{
+      width:500px;
+      padding:5px;
+      width:175px;
+      height:200px;
+  }
+  
+  .places{
+    margin:10px 50px;
+    margin-left:0;
+      float:none;
+  }
+  
+  .text-block {
+    position: absolute;
+    background-color: black;
+    color: white;
+    float: left;
+  }
+  

@@ -1,0 +1,79 @@
+﻿<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <style>
+        #grad1 {
+            height: 550px;
+            background-color: red;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(#1D2B64, #F8CDDA);
+            /* Standard syntax (must be last) */
+        }
+
+        #admin{
+            height: 120px;
+            margin-left: 45.5%;
+            margin-top: -30%;
+            float: left;
+        }
+        .name{
+            text-align: center;
+            margin-top: -20%;
+        }
+        .accounts{
+          
+            margin-top: 20%;
+           margin-left: 20%;
+        }
+    </style>
+    <div id="grad1"></div>
+
+    <hr style="border: 4px solid rgb(122, 122, 122);
+                    width:10%;  float: left; margin-left: 35%; margin-top: 2%;">
+    <hr style="border: 4px solid rgb(243, 225, 205);
+                       width:20%; margin-left: -1.5%; margin-top: 2%;">
+<img src="../../assets/images/adminn.png" id="admin">
+    <div class="name">
+        <h1>Hi {{currentUser.firstName}}!</h1>
+        <p>Welcome to Tguide</p>
+        <p><i>"your travel guide..."</i></p>
+        <br>
+        <br>
+        <br>
+
+        <a routerLink="/www.tguide.com" routerLinkActive="linkActive">www.tguide.com</a>
+
+    </div>
+
+  
+
+<div class="accounts">
+    <div *ngIf="currentUser?.username=='admin'">
+
+        <h3>All registered users:</h3>
+        <ul>
+            <li *ngFor="let user of users">
+                {{user.username}} ({{user.firstName}} {{user.lastName}})
+                - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+
+</html>
+
+
+
+
+
+<!-- <a *ngIf="currentUser" class="nav-item nav-link" (click)="logout()" style="float:right">LOG OUT</a> -->

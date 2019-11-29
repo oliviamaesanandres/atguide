@@ -1,0 +1,220 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="../../assets/images/homebg.jpg">
+    </header>
+
+    <hr style="border: 4px solid rgb(122, 122, 122);
+        width:10%;  float: left; margin-left: 35%; margin-top: 2%;">
+    <hr style="border: 4px solid rgb(243, 225, 205);
+           width:20%; margin-left: -1.5%; margin-top: 2%;">
+
+    <div class="row">
+
+        <div class="column main">
+            <div class="popPlaces">
+
+
+                <h2 class="pageHeader">Top Visited Places
+
+                </h2>
+                <br>
+                <div class="image" style="margin-top: -2%; height:20px;">
+                    <div class="gallery" *ngFor="let place of places"
+                        style="display: inline-block; text-align: left; height:20px;">
+                        <!-- *ngFor="let place of places" -->
+                        <a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                src="../../assets/slider/cebu.jpg"></a><br>
+                        Name: <a routerLink="/location" data-lightbox="image-2" data-title="Photography">
+                            {{ place.name }} </a><br>
+                        Location: <a routerLink="/location" data-lightbox="image-2" data-title="Photography">
+                            {{ place.location }}</a> <br>
+                        Nearby Place: <a routerLink="/location" data-lightbox="image-2" data-title="Photography">
+
+                            {{ place.nearby }} </a><br>
+                        Price: <a routerLink="/location" data-lightbox="image-2" data-title="Photography">
+
+                            {{ place.price }} </a> Php<br>
+                        <!--                         
+                                <a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                        src="../../assets/slider/cebu.jpg"></a>
+                                <a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                        src="../../assets/slider/palawan.jpg"></a>
+                                <a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                        src="../../assets/slider/mayon.jpg"></a>
+                                <a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                        src="../../assets/slider/boracay.jpg"></a>
+        
+                                        <a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                            src="../../assets/slider/batanes.jpg"></a>
+         -->
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="hotPlaces">
+                <h2>Hot Places</h2>
+                <br>
+
+                <div class="image" style="margin-top: -2%;">
+
+                    <div class="places">
+                        <table>
+                            <td> <a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                        src="../../assets/slider/cebu.jpg"></a>
+                            </td>
+                            <td>
+                                <article>
+                                    Cebu is one of the most popular destinations in the Philippines.
+                                    Because it has an international airport, many people touchdown in
+                                    Cebu from overseas and this is their first destination for their
+                                    Philippines adventure. There are so many things to do on Cebu that
+                                    unfortunately, most tourists do one or two and then head to another island.
+                                    This is a big mistake as you can have an adventure-packed week or
+                                    more on Cebu alone! These are all of the places I have personally
+                                    visited in Cebu so far and you can click the links throughout the
+                                    article to visit the individual blog posts about each location.
+
+                                </article>
+
+                            </td>
+                        </table>
+                        <table>
+                            <td> <a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                        src="../../assets/slider/palawan.jpg"></a>
+                            </td>
+                            <td>
+                                <article>
+                                        Nothing defines Palawan more than the water around it. With seascapes 
+                                        the equal of any in Southeast Asia, and terrestrial and aquatic wildlife, 
+                                        the Philippines’ most sparsely populated region is also the most beguiling. 
+                                        Because of the silhouette of its main island – a long sliver stretching
+                                         650km all the way to Borneo – there’s a certain liberating logic 
+                                         to travel here.
+
+                                </article>
+                            </td>
+                        </table>
+                        <table>
+                            <td> <a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                        src="../../assets/slider/boracay.jpg"></a>
+                            </td>
+                            <td>
+                                <article>
+                                        Boracay is a tropical island about an hour's flight from Metro Manila 
+                                        in the Philippines. It has superb long white sand beaches, as good as 
+                                        any anywhere, and is one of the country's most developed tourist 
+                                        destinations. 
+
+                                </article>
+
+                            </td>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h2>User Reviews</h2>
+                
+                <div class="comment">
+                    <table border=1>
+                        <tr>
+
+                            <th>User</th>
+                            <th>Comment</th>
+                            <th>Rating</th>
+                        </tr>
+                        <!-- <div *ngIf="place.id == 1">
+                                                    {{ place.name }}
+                                            </div>
+                                            {{ place.name }} -->
+                        <tr *ngFor="let comment of comments">
+
+                            <!-- <td><a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                                        src="../../assets/slider/boracay.jpg" height="50px"></a></td> -->
+                            <td>{{ comment.name }}</td>
+                            <td>{{ comment.comment }}</td>
+                            <td>{{ comment.rating }}</td>
+                            <td>
+
+                               
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="column side">
+            <div>
+
+                <h2>Share and Links</h2>
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/CnOedsCmups" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+            </div>
+            <div>
+
+                <h2>Navigate</h2>
+                <ul>
+                    <li> <a routerLink="/home" routerLinkActive="linkActive">Home</a></li>
+                    <li> <a routerLink="/location" routerLinkActive="linkActive">Location</a>
+                    </li>
+                    <li> <a routerLink="/account" routerLinkActive="linkActive">Account</a>
+                    </li>
+                    <li>
+
+                        <a routerLink="/about" routerLinkActive="linkActive">About Us</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("navbar").style.padding = "30px 10px";
+                document.getElementById("logo").style.fontSize = "25px";
+            } else {
+                document.getElementById("navbar").style.padding = "80px 10px";
+                document.getElementById("logo").style.fontSize = "35px";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

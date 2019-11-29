@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="../../assets/images/homebg.jpg">
+    </header>
+
+    <hr style="border: 4px solid rgb(122, 122, 122);
+    width:10%;  float: left; margin-left: 35%; margin-top: 2%;">
+    <hr style="border: 4px solid rgb(243, 225, 205);
+       width:20%; margin-left: -1.5%; margin-top: 2%;">
+
+    <div class="row">
+
+        <div class="column main">
+
+            <div class=topVisitedSite>
+                <div class="placeInput">
+                    <h1 class="tableTitle">Add Top Visited Place</h1>
+                    <form #place="ngForm">
+                        <label>Name</label><br>
+
+                        <input type="text" placeholder="Input Place Name" pattern="[a-zA-Z . , ' /s]*" required
+                            #placename="ngModel" [class.invalid]="placename.invalid && placename.touched"
+                            [(ngModel)]="placeName" name="placeName"><br>
+
+
+                        <label>Location</label><br>
+
+                        <input type="text" placeholder="Input Location" pattern="[a-zA-Z . , ' /s]*" required
+                            #location="ngModel" [class.invalid]="location.invalid && location.touched"
+                            [(ngModel)]="Location" name="Location"><br>
+
+                        <label>Nearby Places</label><br>
+
+                        <input type="text" placeholder="Input Location" pattern="[a-zA-Z , . ' /s]*" required
+                            #location="ngModel" [class.invalid]="nearby.invalid && nearby.touched"
+                            [(ngModel)]="Nearby" name="Nearby"><br>
+
+
+                        <label>Price</label><br>
+
+                        <input type="number" placeholder="Input price of vicinity in Php" required pattern="[0-9]*"
+                            #price="ngModel" [class.invalid]="price.invalid && price.touched" [(ngModel)]="Price"
+                            name="Price"><br><br>
+
+                        <button id="btn" (click)="addPlace()" *ngIf="place.valid">Submit</button>
+                    </form>
+                </div>
+
+                <div class="studList">
+
+                    <h1 class="tableTitle">Place Details
+
+                    </h1>
+                    <table border=1>
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Location</th>
+                            <th>Nearby</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                        <!-- <div *ngIf="place.id == 1">
+                                {{ place.name }}
+                        </div>
+                        {{ place.name }} -->
+                        <tr *ngFor="let place of places">
+
+                            <!-- <td><a routerLink="/location" data-lightbox="image-2" data-title="Photography"><img
+                                    src="../../assets/slider/boracay.jpg" height="50px"></a></td> -->
+                            <td>{{ place.name }}</td>
+                            <td>{{ place.location }}</td>
+                            <td>{{ place.nearby }}</td>
+                            <td>{{ place.price }}</td>
+                            <td>
+                                <div class="" style="margin-left: 20%;">
+                                    <button (click)="updatePlace(place._id)">Update</button>
+                                    <button (click)="deletePlace(place._id)">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="column side">
+            <div>
+
+                <h2>Share and Links</h2>
+                <iframe width="250" height="200" src="https://www.youtube.com/embed/CnOedsCmups" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+            </div>
+            <div>
+
+                <h2>Navigate</h2>
+                <ul>
+                    <li> <a routerLink="/home" routerLinkActive="linkActive">Home</a></li>
+                    <li> <a routerLink="/location" routerLinkActive="linkActive">Location</a>
+                    </li>
+                    <li> <a routerLink="/account" routerLinkActive="linkActive">Account</a>
+                    </li>
+                    <li>
+
+                        <a routerLink="/about" routerLinkActive="linkActive">About Us</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</body>
+
+</html>
